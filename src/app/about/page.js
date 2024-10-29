@@ -28,7 +28,7 @@ export default function AboutUs() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <Image
-                            src="/placeholder.svg?height=400&width=600"
+                            src="/home2.jpg"
                             alt="Our team"
                             width={600}
                             height={400}

@@ -42,7 +42,7 @@ export default function Home() {
             className="relative h-64 sm:h-72 md:h-96 rounded-lg overflow-hidden shadow-xl"
           >
             <Image
-              src="/placeholder.svg?height=600&width=800"
+              src="/home3.jpg"
               alt="Beauty treatment"
               layout="fill"
               objectFit="cover"
