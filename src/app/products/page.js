@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ShoppingCart, X } from 'lucide-react'
+import { useCart } from '../context/CartContext'
 
 const products = [
     { id: 1, name: 'Natural Face Cream', price: 29.99, image: '/placeholder.svg?height=400&width=400', description: 'A nourishing face cream made with all-natural ingredients to hydrate and rejuvenate your skin.' },
@@ -15,30 +16,12 @@ const products = [
 ]
 
 export default function ProductsPage() {
-    const [cart, setCart] = useState([])
     const [selectedProduct, setSelectedProduct] = useState(null)
+    const { addToCart } = useCart()
 
-    useEffect(() => {
-        const storedCart = localStorage.getItem('cart')
-        if (storedCart) {
-            setCart(JSON.parse(storedCart))
-        }
-    }, [])
-
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }, [cart])
-
-    const addToCart = (product) => {
-        setCart((prevCart) => {
-            const existingItem = prevCart.find((item) => item.id === product.id)
-            if (existingItem) {
-                return prevCart.map((item) =>
-                    item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-                )
-            }
-            return [...prevCart, { ...product, quantity: 1 }]
-        })
+    const handleAddToCart = (product) => {
+        addToCart(product)
+        // alert(`${product.name} added to cart!`)
     }
 
     return (
@@ -75,7 +58,7 @@ export default function ProductsPage() {
                                         View Details
                                     </button>
                                     <button
-                                        onClick={() => addToCart(product)}
+                                        onClick={() => handleAddToCart(product)}
                                         className="px-4 py-2 bg-brown-600 text-white rounded-full hover:bg-brown-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brown-500 flex items-center"
                                     >
                                         <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
@@ -117,7 +100,8 @@ export default function ProductsPage() {
                                 <p className="text-gray-600 mb-6">{selectedProduct.description}</p>
                                 <button
                                     onClick={() => {
-                                        addToCart(selectedProduct)
+
+                                        handleAddToCart(selectedProduct)
                                         setSelectedProduct(null)
                                     }}
                                     className="w-full px-6 py-3 bg-brown-600 text-white rounded-full hover:bg-brown-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brown-500 flex items-center justify-center"

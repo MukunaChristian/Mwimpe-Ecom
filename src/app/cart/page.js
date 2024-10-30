@@ -1,34 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Trash2 } from 'lucide-react'
+import { useCart } from '../context/CartContext'
 
 export default function CartPage() {
-    const [cart, setCart] = useState([])
-
-    useEffect(() => {
-        const storedCart = localStorage.getItem('cart')
-        if (storedCart) {
-            setCart(JSON.parse(storedCart))
-        }
-    }, [])
-
-    useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }, [cart])
-
-    const updateQuantity = (id, newQuantity) => {
-        setCart(cart.map(item =>
-            item.id === id ? { ...item, quantity: Math.max(0, newQuantity) } : item
-        ).filter(item => item.quantity > 0))
-    }
-
-    const removeItem = (id) => {
-        setCart(cart.filter(item => item.id !== id))
-    }
+    const { cart, updateQuantity, removeItem } = useCart()
 
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
@@ -76,7 +55,6 @@ export default function CartPage() {
                                                 <button className="px-2 py-1 bg-brown-100 text-brown-800 rounded-md" onClick={() => updateQuantity(item.id, item.quantity - 1)}>-</button>
                                                 <span className="mx-2">{item.quantity}</span>
                                                 <button className="px-2 py-1 bg-brown-100 text-brown-800 rounded-md" onClick={() => updateQuantity(item.id, item.quantity + 1)}>+</button>
-
                                             </div>
                                         </td>
                                         <td>${item.price.toFixed(2)}</td>
