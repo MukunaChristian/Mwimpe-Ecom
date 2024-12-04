@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { servicesData } from '@/data/servicesData'
 import { motion } from 'framer-motion'
 
 export default function Home() {
@@ -59,13 +60,17 @@ export default function Home() {
         >
           <h2 className="text-3xl font-bold text-center text-brown-800 mb-8">Our Featured Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { title: 'Facial Treatments', icon: '✨' },
-              { title: 'Body Treatments', icon: '🧖‍♀️' },
-              { title: 'Natural Skincare', icon: '🌿' },
-            ].map((service, index) => (
+            {servicesData.map((service, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="text-4xl mb-4">{service.icon}</div>
+                <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                  />
+                </div>
                 <h3 className="text-xl font-semibold text-brown-700 mb-2">{service.title}</h3>
                 <p className="text-gray-600">Experience the best in natural beauty care.</p>
               </div>
@@ -76,3 +81,4 @@ export default function Home() {
     </div>
   )
 }
+

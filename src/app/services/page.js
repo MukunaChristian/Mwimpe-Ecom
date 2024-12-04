@@ -1,29 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-const services = [
-    {
-        title: 'Facial Treatments',
-        description: 'Rejuvenate your skin with our customized facial treatments.',
-        icon: '✨'
-    },
-    {
-        title: 'Body Treatments',
-        description: 'Indulge in our luxurious body treatments for total relaxation.',
-        icon: '🧖‍♀️'
-    },
-    {
-        title: 'Makeup Services',
-        description: 'Look your best for any occasion with our professional makeup services.',
-        icon: '💄'
-    },
-    {
-        title: 'Skincare Consultation',
-        description: 'Get personalized skincare advice from our experts.',
-        icon: '👩‍⚕️'
-    }
-]
+import { servicesData } from '@/data/servicesData'
+import Image from 'next/image'
 
 export default function Services() {
     return (
@@ -43,19 +22,21 @@ export default function Services() {
                     </p>
                 </motion.div>
 
-                <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={service.title}
-                            className="bg-white rounded-lg shadow-lg p-6"
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                        >
-                            <div className="text-4xl mb-4">{service.icon}</div>
-                            <h2 className="text-xl font-bold text-brown-800 mb-2">{service.title}</h2>
-                            <p className="text-gray-600">{service.description}</p>
-                        </motion.div>
+                <div className="grid md:grid-cols-3 gap-8">
+                    {servicesData.map((service, index) => (
+                        <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
+                            <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                                <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <h3 className="text-xl font-semibold text-brown-700 mb-2">{service.title}</h3>
+                            <p className="text-gray-600">Experience the best in natural beauty care.</p>
+                        </div>
                     ))}
                 </div>
             </div>

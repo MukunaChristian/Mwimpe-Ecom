@@ -43,12 +43,19 @@ export default function AboutUs() {
                     >
                         <h2 className="text-2xl font-bold text-brown-800 mb-4">Our Story</h2>
                         <p className="text-gray-600 mb-4">
-                            Founded in 2010, Beauty & Skincare has been at the forefront of natural and effective skincare solutions. Our passion for beauty and commitment to using only the finest natural ingredients sets us apart in the industry.
-                        </p>
-                        <p className="text-gray-600">
-                            We believe that everyone deserves to feel confident and beautiful in their own skin. Our team of expert estheticians and skincare specialists work tirelessly to provide personalized treatments and advice to help you achieve your beauty goals.
+                            We are an organic brand focused on giving you the best skin. Our aim is confidence, comfort in
+                            your own skin, and the ability to embrace it. Our products are formulated with bio-active
+                            ingredients that work on a cellular level, helping to slow down the aging process.
+                            They protect your skin naturally without compromising your health. The name ‘Mwimpe’ originated
+                            from a word in the Luba tribe. This name is inspired by the late Marie Bakaji, as it was one of
+                            the most common words she used to compliment herself, seeing that
+                            she was black, natural, organic, and beautiful. Mwimpe Beauty also specializes in
+                            providing quality facial services and permanent makeup services, such as microshading and
+                            lip neutralization. These services aim to boost your confidence and enhance your beauty to a
+                            whole new level.
                         </p>
                     </motion.div>
+
                 </div>
             </div>
         </div>
