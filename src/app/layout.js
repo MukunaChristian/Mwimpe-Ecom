@@ -8,7 +8,7 @@ import "../styles/globals.css";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Beauty & Skincare',
+  title: 'Mwimpe Beauty',
   description: 'Professional beauty and skincare services',
 }
 

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import about from "/public/home2.jpg"
 
 export default function AboutUs() {
     return (
@@ -28,11 +29,13 @@ export default function AboutUs() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
                         <Image
-                            src="/home2.jpg"
+                            src={about}
                             alt="Our team"
                             width={600}
                             height={400}
-                            className="rounded-lg shadow-lg"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="rounded-lg shadow-lg object-cover"
+                            priority
                         />
                     </motion.div>
                     <motion.div
@@ -46,7 +49,7 @@ export default function AboutUs() {
                             We are an organic brand focused on giving you the best skin. Our aim is confidence, comfort in
                             your own skin, and the ability to embrace it. Our products are formulated with bio-active
                             ingredients that work on a cellular level, helping to slow down the aging process.
-                            They protect your skin naturally without compromising your health. The name ‘Mwimpe’ originated
+                            They protect your skin naturally without compromising your health. The name &apos;Mwimpe&apos; originated
                             from a word in the Luba tribe. This name is inspired by the late Marie Bakaji, as it was one of
                             the most common words she used to compliment herself, seeing that
                             she was black, natural, organic, and beautiful. Mwimpe Beauty also specializes in
@@ -55,9 +58,9 @@ export default function AboutUs() {
                             whole new level.
                         </p>
                     </motion.div>
-
                 </div>
             </div>
         </div>
     )
 }
+

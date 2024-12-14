@@ -3,35 +3,13 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-
-const gallery = [
-    {
-        before: '/placeholder.svg?height=300&width=300',
-        after: '/placeholder.svg?height=300&width=300',
-        title: 'Facial Transformation'
-    },
-    {
-        before: '/placeholder.svg?height=300&width=300',
-        after: '/placeholder.svg?height=300&width=300',
-        title: 'Skin Rejuvenation'
-    },
-    {
-        before: '/placeholder.svg?height=300&width=300',
-        after: '/placeholder.svg?height=300&width=300',
-        title: 'Makeup Makeover'
-    },
-    {
-        before: '/placeholder.svg?height=300&width=300',
-        after: '/placeholder.svg?height=300&width=300',
-        title: 'Body Treatment Results'
-    },
-]
+import { gallery } from '@/data/servicesData'
 
 export default function Gallery() {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
     return (
-        <div className="bg-brown-50">
+        <div className="bg-brown-50 min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <motion.div
                     className="text-center"
@@ -58,13 +36,18 @@ export default function Gallery() {
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
                         >
-                            <Image
-                                src={hoveredIndex === index ? item.after : item.before}
-                                alt={item.title}
-                                width={300}
-                                height={300}
-                                className="w-full h-full object-cover transition-opacity duration-300"
-                            />
+                            <div className="relative w-full h-72 md:h-96 lg:h-80">
+                                <div className="w-full h-full absolute inset-0">
+                                    <Image
+                                        src={hoveredIndex === index ? item.after : item.before}
+                                        alt={`Before and After of ${item.title}`}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                                        className="object-cover transition-opacity duration-300"
+                                        priority={index < 4}
+                                    />
+                                </div>
+                            </div>
                             <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                                 <p className="text-white text-center font-bold">{item.title}</p>
                             </div>
@@ -80,3 +63,4 @@ export default function Gallery() {
         </div>
     )
 }
+

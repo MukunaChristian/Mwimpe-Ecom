@@ -1,26 +1,34 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const testimonials = [
     {
-        name: 'Sarah Johnson',
-        quote: 'The facial treatment I received was amazing! My skin has never looked better.',
-        image: '/placeholder.svg?height=100&width=100'
+        name: 'Pierriette MC',
+        quote: 'Hello love, hope you are doing well. Thank you so much! Last night I used the scrub and applied the oil. This morning, I could already feel my skin is smooth. Thank you so much. I’ll definitely come back.'
     },
     {
-        name: 'Mike Thompson',
-        quote: 'I was skeptical at first, but the results speak for themselves. Highly recommended!',
-        image: '/placeholder.svg?height=100&width=100'
+        name: 'Rachele',
+        quote: 'I’m so in love with the products! My favorite ones are the Turmeric oil and soap—they’re bringing a beautiful glow to my skin. I’m sure by month-end I’ll try out the glow combo too!'
     },
     {
-        name: 'Emily Davis',
-        quote: 'The staff is so knowledgeable and friendly. I always feel pampered when I visit.',
-        image: '/placeholder.svg?height=100&width=100'
+        name: 'whois_liidy',
+        quote: 'Highly recommend!'
     },
-]
+    {
+        name: 'Gracia',
+        quote: 'Hey there! Your products are magical. Within a week, I could feel and see the difference. Now that it has been a month, the change is so evident!'
+    },
+    {
+        name: 'Yhori MC',
+        quote: 'The oil is working perfectly on my face and neck. I love the results I’m seeing. Thank you!'
+    },
+    {
+        name: 'Ulri',
+        quote: 'Mwimpe Beauty is the best. They provide great service. I got my micro-shading ombre eyebrows done by them, and I love it!'
+    },
+];
 
 export default function Testimonials() {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -34,7 +42,7 @@ export default function Testimonials() {
     }
 
     return (
-        <div className="bg-brown-50">
+        <div className="bg-brown-50 min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <motion.div
                     className="text-center"
@@ -60,17 +68,12 @@ export default function Testimonials() {
                             transition={{ duration: 0.5 }}
                             className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto"
                         >
-                            <div className="flex items-center mb-4">
-                                <Image
-                                    src={testimonials[currentIndex].image}
-                                    alt={testimonials[currentIndex].name}
-                                    width={60}
-                                    height={60}
-                                    className="rounded-full mr-4"
-                                />
-                                <h2 className="text-xl font-bold text-brown-800">{testimonials[currentIndex].name}</h2>
-                            </div>
-                            <p className="text-gray-600 italic">&quot;{testimonials[currentIndex].quote}&quot;</p>
+                            <h2 className="text-xl font-bold text-brown-800 mb-4 text-center">
+                                {testimonials[currentIndex].name}
+                            </h2>
+                            <p className="text-gray-600 italic text-center">
+                                &quot;{testimonials[currentIndex].quote}&quot;
+                            </p>
                         </motion.div>
                     </AnimatePresence>
                     <button

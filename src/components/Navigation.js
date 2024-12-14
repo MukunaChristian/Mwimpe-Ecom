@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -21,6 +21,11 @@ export default function Navigation() {
     const { cart } = useCart()
 
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0)
+
+    // Function to close the menu when a link is clicked
+    const closeMenu = () => {
+        setIsOpen(false)
+    }
 
     return (
         <nav className="bg-white shadow-md">
@@ -107,6 +112,7 @@ export default function Navigation() {
                         <Link
                             key={link.href}
                             href={link.href}
+                            onClick={closeMenu} // Close the menu when any link is clicked
                             className="text-gray-600 hover:text-brown-800 block px-3 py-2 rounded-md text-base font-medium"
                         >
                             {link.label}

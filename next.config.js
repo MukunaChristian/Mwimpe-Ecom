@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export', // Enables static export
     images: {
-        domains: ['your-image-domain.com'],
+        unoptimized: true,
     },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
+
