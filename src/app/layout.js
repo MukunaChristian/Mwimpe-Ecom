@@ -6,6 +6,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { CartProvider } from "./context/CartContext";
 import "../styles/globals.css";
+import { metadata } from "./metadata";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +35,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <head />
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <link rel="icon" href={metadata.icons.icon} />
+      </head>
       <body className={`${inter.className} bg-white text-gray-900 flex flex-col min-h-screen`}>
         <CartProvider>
           <Navigation />

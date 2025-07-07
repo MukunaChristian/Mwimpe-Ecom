@@ -46,7 +46,7 @@ export default function Home() {
           >
             {/* Optimized Hero Image */}
             <Image
-              src="/home3.jpg"
+              src="/home3.webp"
               alt="Beauty treatment"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

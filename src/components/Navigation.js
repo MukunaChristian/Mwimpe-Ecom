@@ -34,7 +34,7 @@ export default function Navigation() {
                 <div className="flex items-center justify-between h-16">
                     <Link href="/" className="flex items-center">
                         <Image
-                            src="/Mwimpe-beauty-logo.png"
+                            src="/Mwimpe-beauty-logo.webp"
                             alt="Mwimpe Beauty Logo"
                             width={100}
                             height={80}

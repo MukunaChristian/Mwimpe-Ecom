@@ -9,7 +9,7 @@ export const metadata = {
         siteName: "Mwimpe Beauty",
         images: [
             {
-                url: "/Mwimpe-beauty-logo.png",
+                url: "/icon1.webp",
                 width: 800,
                 height: 600,
             },
@@ -18,9 +18,9 @@ export const metadata = {
         type: "website",
     },
     icons: {
-        icon: "/icon1.jpg",
-        shortcut: "/icon1.jpg",
-        apple: "/icon1.jpg",
+        icon: "/icon1.webp",
+        shortcut: "/icon1.webp",
+        apple: "/icon1.webp",
     },
 }
 
