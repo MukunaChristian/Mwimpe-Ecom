@@ -2,7 +2,7 @@
 export const servicesData = [
     {
         title: 'Dermaplane Facial',
-        image: '/african-girl.webp',
+        image: '/AFRICA.webp',
         shortDescription: 'Revitalize your skin with our expert facial treatments.',
         longDescription: 'Our facial treatments are designed to revitalize and rejuvenate your skin. Such as Dermaplane, algae skin peel and skin tags removal. Using premium products and advanced techniques, our expert estheticians will cleanse, exfoliate, and nourish your skin, leaving you with a radiant, youthful glow.'
     },
@@ -26,7 +26,7 @@ export const servicesData = [
     },
     {
         title: 'Semi-Permanent Microshaded Eyebrows',
-        image: '/female-client.webp',
+        image: '/female.webp',
         shortDescription: 'Enhance your features with our permanent makeup services.',
         longDescription: 'Permanent Makeup (PMU) is a cosmetic technique that implants pigment into the skin to create the appearance of makeup. Our skilled technicians offer services such as microblading for eyebrows, lip blushing, and eyeliner.'
     },
@@ -56,7 +56,7 @@ export const servicesData = [
     },
     {
         title: 'Deep Cleansing Facial',
-        image: '/facial.webp',
+        image: '/facial1.webp',
         shortDescription: 'Detoxify and refresh your skin with a deep, pore-purifying cleanse.',
         longDescription: 'A deep cleansing facial is a multi-step professional skincare treatment designed to thoroughly cleanse, exfoliate, and purify the skin, addressing concerns like clogged pores, acne, and uneven skin tone.'
     },
@@ -85,12 +85,12 @@ export const gallery = [
     },
     {
         before: '/lipsb1.webp',
-        after: '/lipsafter2.webp',
+        after: '/lipsafter2.jpg',
         title: 'Semi-Permanent Lip Liner'
     },
     {
         before: '/lipsbefore2.webp',
-        after: '/lipsafter2.webp',
+        after: '/lipsafter3.webp',
         title: 'Semi-Permanent Lip Blush'
     },
 ]
